@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>New Search</h2>
+
+<!-- Search Term Input -->
+<div>
+  <label for="searchTerm">Search Term:</label>
+  <input type="text" id="searchTerm" name="search_term">
+  <button id="btnSearchMaps">Search on Google Maps</button>
+</div>
+
+<!-- URL Input and Extract -->
+<div>
+  <label for="mapsUrl">Google Maps URL:</label>
+  <input type="text" id="mapsUrl" name="maps_url_input" size="80">
+  <button id="btnExtract">Extract</button>
+</div>
+
+<!-- Parsed Fields -->
+<div>
+  <h3>Parsed Data</h3>
+  <label>Name: <span id="nameField"></span></label><br>
+  <label>Latitude: <span id="latField"></span></label><br>
+  <label>Longitude: <span id="lngField"></span></label><br>
+  <label>CID: <span id="cidField"></span></label><br>
+  <label>Place ID: <span id="placeIdField"></span></label>
+</div>
+
+<!-- Enrichment Checkboxes -->
+<div>
+  <h3>Enrichment Options</h3>
+  <label><input type="checkbox" id="placeDetailsCheckbox"> Place Details API</label><br>
+  <label><input type="checkbox" id="kgCheckbox"> Knowledge Graph ID</label>
+</div>
+
+<!-- Buttons -->
+<div>
+  <button id="btnFetch">Fetch Selected Data</button>
+  <button id="btnSave">Save Record</button>
+</div>
+
+<!-- Output and Log -->
+<div>
+  <h3>Output Preview</h3>
+  <pre id="outputBox">{ }</pre>
+</div>
+
+<div>
+  <h4>Status Log</h4>
+  <p id="statusLog">Awaiting action...</p>
+</div>
+
+{% endblock %}
