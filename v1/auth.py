@@ -33,8 +33,7 @@ def login():
 @auth_bp.route("/logout")
 def logout():
     """
-    Clear all session data and redirect to the home route.
-    Home will then redirect to /login if not authenticated.
+    Clear all session data and redirect to the login info page.
     """
     try:
         keys = list(session.keys())
@@ -43,7 +42,7 @@ def logout():
     except Exception:
         # As a safe fallback, nuke the whole session
         session.clear()
-    return redirect(url_for("home"))
+    return redirect(url_for("login_info"))
 
 
 @auth_bp.route("/oauth2callback")
