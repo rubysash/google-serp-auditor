@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fraze Marketing GMB Research</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="bg-dark text-light">
+
+<!-- Modern Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary shadow-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-3" href="/">
+            <i class="fas fa-map-marked-alt me-2 text-warning"></i>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CiAgPCEtLSBPdXRlciByaW5nIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ4IiBmaWxsPSIjZTc0YzNjIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPgogIAogIDwhLS0gU2Vjb25kIHJpbmcgLSBXaGl0ZSAtLT4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSJub25lIi8+CiAgCiAgPCEtLSBUaGlyZCByaW5nIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjI4IiBmaWxsPSIjZTc0YzNjIiBzdHJva2U9Im5vbmUiLz4KICA8IS0tIEZvdXJ0aCByaW5nIC0gV2hpdGUgLS0+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMTgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0ibm9uZSIvPgogIAogIDwhLS0gQ2VudGVyIGJ1bGxzZXllIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjgiIGZpbGw9IiNlNzRjM2MiIHN0cm9rZT0ibm9uZSIvPgogIAogIDwhLS0gQ2VudGVyIGRvdCAtIERhcmsgcmVkIGZvciBjb250cmFzdCAtLT4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzIiBmaWxsPSIjYzAzOTJiIiBzdHJva2U9Im5vbmUiLz4KPC9zdmc+" class="me-2" style="width: 20px; height: 20px;">
+            Maps Intelligence
+        </a>
+        
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link px-3 rounded-pill mx-1" href="/">
+                        <i class="fas fa-search me-2"></i>New Search
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 rounded-pill mx-1" href="/help">
+                        <i class="fas fa-question-circle me-2"></i>Help
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 rounded-pill mx-1" href="#" id="apiStatusLink" 
+                       data-bs-toggle="tooltip" data-bs-placement="bottom" 
+                       title="Click to refresh status">
+                        <i class="fas fa-chart-line me-2"></i>
+                        <span id="apiStatusText">API Status</span>
+                        <span id="apiUsageCount" class="badge bg-secondary ms-1">0</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3 rounded-pill" href="#" 
+                       id="userDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-2"></i>Account
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow">
+                        <li><a class="dropdown-item" href="/api/test-kg">
+                            <i class="fas fa-flask me-2"></i>Test API
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout">
+                            <i class="fas fa-sign-out-alt me-2"></i>Logout
+                        </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container-fluid py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-10">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark border-top border-secondary py-4 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <small class="text-muted">
+                    <i class="fas fa-code me-1"></i>
+                    Maps Intelligence Tool v1.2 | 
+                    <span class="text-success">
+                        <i class="fas fa-circle me-1" style="font-size: 0.5rem;"></i>Online
+                    </span>
+                </small>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <small class="text-muted">
+                    <a href="/help" class="text-decoration-none text-info me-3">
+                        <i class="fas fa-book me-1"></i>Documentation
+                    </a>
+                    <a href="#" class="text-decoration-none text-info">
+                        <i class="fas fa-github me-1"></i>Support
+                    </a>
+                </small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Make API key available to frontend JavaScript -->
+{% if google_maps_api_key %}
+<script nonce="{{ csp_nonce }}">
+    window.GOOGLE_MAPS_API_KEY = "{{ google_maps_api_key }}";
+    window.googleMapsApiKey = "{{ google_maps_api_key }}";
+</script>
+{% endif %}
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+<!-- Google Maps API -->
+{% if google_maps_api_key %}
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&libraries=places&loading=async&callback=onGoogleMapsLoaded"
+  async
+  defer
+></script>
+{% endif %}
+
+</body>
+</html>
