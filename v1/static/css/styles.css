@@ -1,7 +1,444 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
+/* FILE: static/css/styles.css */
+/* Darkly ttkbootstrap theme inspired styles with high contrast */
+
+:root {
+    /* Darkly theme color palette */
+    --bs-body-bg: #222222;
+    --bs-body-color: #ffffff;
+    --bs-secondary-bg: #2b3035;
+    --bs-tertiary-bg: #3a3f44;
+    --bs-dark-bg: #1a1e23;
+    --bs-primary: #375a7f;
+    --bs-secondary: #444;
+    --bs-success: #00bc8c;
+    --bs-info: #3498db;
+    --bs-warning: #f39c12;
+    --bs-danger: #e74c3c;
+    --bs-light: #adb5bd;
+    --bs-muted: #6c757d;
+    --border-color: #495057;
 }
 
-h2 {
-    margin-bottom: 20px;
+/* Base styles */
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Enhanced navbar */
+.navbar-dark .navbar-brand {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+.navbar-dark .nav-link {
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .nav-link:hover {
+    color: var(--bs-warning) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(135deg, var(--bs-primary) 0%, #4a6fa5 100%);
+}
+
+/* Card styles */
+.card {
+    border: 1px solid var(--border-color);
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(135deg, var(--bs-secondary-bg) 0%, var(--bs-tertiary-bg) 100%);
+}
+
+.card-header {
+    background-color: var(--bs-tertiary-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: #ffffff;
+}
+
+.card-header h4,
+.card-header h5 {
+    color: #ffffff;
+}
+
+/* Form controls with high contrast */
+.form-control {
+    background-color: var(--bs-dark-bg);
+    border: 1px solid var(--border-color);
+    color: #ffffff;
+}
+
+.form-control:focus {
+    background-color: var(--bs-dark-bg);
+    border-color: var(--bs-primary);
+    color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(55, 90, 127, 0.25);
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+.form-label {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Input group styling */
+.input-group-text {
+    border: 1px solid var(--border-color);
+    color: #ffffff;
+}
+
+.input-group-text.bg-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary);
+}
+
+.input-group-text.bg-success {
+    background-color: var(--bs-success) !important;
+    border-color: var(--bs-success);
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #4a6fa5;
+    border-color: #4a6fa5;
+    color: #ffffff;
+}
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background-color: #00a085;
+    border-color: #00a085;
+    color: #ffffff;
+}
+
+.btn-warning {
+    background-color: var(--bs-warning);
+    border-color: var(--bs-warning);
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+    color: #ffffff;
+}
+
+.btn-info {
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    color: #ffffff;
+}
+
+/* Data display sections */
+.bg-secondary {
+    background-color: var(--bs-dark-bg) !important;
+    border: 1px solid var(--border-color);
+}
+
+/* Text colors with high contrast */
+.text-primary {
+    color: #5dade2 !important;
+}
+
+.text-success {
+    color: var(--bs-success) !important;
+}
+
+.text-info {
+    color: #5dade2 !important;
+}
+
+.text-warning {
+    color: #f7dc6f !important;
+}
+
+.text-danger {
+    color: #ec7063 !important;
+}
+
+.text-muted {
+    color: #adb5bd !important;
+}
+
+/* Code and pre elements */
+code {
+    background-color: var(--bs-dark-bg);
+    color: var(--bs-success);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+pre {
+    background-color: var(--bs-dark-bg) !important;
+    color: #ffffff;
+    border: 1px solid var(--border-color) !important;
+}
+
+#outputBox {
+    background-color: var(--bs-dark-bg) !important;
+    color: #ffffff;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+#statusLog {
+    background-color: var(--bs-dark-bg) !important;
+    color: #ffffff;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Form switches */
+.form-check-input:checked {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 188, 140, 0.25);
+}
+
+.form-check-label {
+    color: #ffffff;
+}
+
+/* Dropdown menus */
+.dropdown-menu-dark {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--border-color);
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #ffffff;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+    background-color: var(--bs-primary);
+    color: #ffffff;
+}
+
+.dropdown-divider {
+    border-top: 1px solid var(--border-color);
+}
+
+/* Typography improvements */
+.display-4 {
+    color: #ffffff;
+}
+
+.lead {
+    color: #adb5bd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+/* Text gradient for hero title */
+.text-gradient {
+    background: linear-gradient(135deg, #5dade2 0%, var(--bs-success) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* Shadows and borders */
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.border-secondary {
+    border-color: var(--border-color) !important;
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--bs-dark-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+footer a {
+    color: var(--bs-info) !important;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #5dade2 !important;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .input-group-lg .form-control {
+        font-size: 1rem;
+    }
+}
+
+/* Focus states for accessibility */
+.btn:focus,
+.form-control:focus,
+.form-check-input:focus {
+    outline: 2px solid var(--bs-warning);
+    outline-offset: 2px;
+}
+
+/* Animation for smooth interactions */
+.btn,
+.form-control,
+.card {
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Status indicators */
+.text-online {
+    color: var(--bs-success) !important;
+}
+
+.text-offline {
+    color: var(--bs-danger) !important;
+}
+
+/* Ensure all icons are visible */
+.fas, .far, .fab {
+    color: inherit;
+}
+
+/* Input group button fixes */
+.input-group .btn {
+    border-left: 0;
+}
+
+.input-group .form-control:not(:last-child) {
+    border-right: 0;
+}
+
+/* Make sure data fields are readable */
+#nameField,
+#latField,
+#lngField,
+#cidField,
+#placeIdField {
+    font-weight: 600;
+    min-height: 1.5rem;
+    display: inline-block;
+}
+
+/* Improve form switch visibility */
+.form-check-input {
+    background-color: var(--bs-secondary-bg);
+    border: 1px solid var(--border-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+
+/* Tab navigation styling */
+.nav-tabs .nav-link {
+    background-color: var(--bs-tertiary-bg);
+    border: 1px solid var(--border-color);
+    color: #adb5bd;
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: var(--bs-secondary-bg);
+    color: #ffffff;
+    border-color: var(--border-color);
+}
+
+.nav-tabs .nav-link.active {
+    background-color: var(--bs-secondary-bg);
+    color: #ffffff;
+    border-color: var(--border-color);
+    border-bottom-color: var(--bs-secondary-bg);
+}
+
+/* Knowledge links table styling */
+#knowledgeLinksTable .badge {
+    font-size: 0.8rem;
+}
+
+#knowledgeLinksTable a {
+    word-break: break-all;
+}
+
+/* API status indicator */
+#apiStatusLink.text-success #apiStatusText {
+    color: var(--bs-success) !important;
+}
+
+#apiStatusLink.text-danger #apiStatusText {
+    color: var(--bs-danger) !important;
+}
+
+#apiStatusLink.text-warning #apiStatusText {
+    color: var(--bs-warning) !important;
+}
+
+#apiUsageCount {
+    font-size: 0.7rem;
+    min-width: 1.5rem;
+}
+
+/* Tooltip styling  */
+.tooltip .tooltip-inner {
+    background-color: var(--bs-secondary-bg) !important;
+    color: #5dade2 !important; /* Same color as text-gradient */
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.tooltip .tooltip-arrow::before {
+    border-top-color: var(--bs-secondary-bg) !important;
+    border-bottom-color: var(--bs-secondary-bg) !important;
 }
