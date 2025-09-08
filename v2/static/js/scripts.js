@@ -748,7 +748,7 @@ function updateKnowledgeLinksTable() {
     
     links.push({
       title: "Domain Mentions",
-      url: `https://www.google.com/search?q="${encodedDomain}"+-site:${encodedDomain}`,
+      url: `https://www.google.com/search?q=${encodedDomain}+-site:${encodedDomain}`,
       tips: "Mentions of the domain across the web - Monitor brand awareness and citations"
     });
     
@@ -823,31 +823,31 @@ function updateKnowledgeLinksTable() {
   if (encodedBusinessName) {
     links.push({
       title: "Brand Name Mentions",
-      url: `https://www.google.com/search?q="${encodedBusinessName}"${domain ? `+-site:${encodedDomain}` : ''}`,
+      url: `https://www.google.com/search?q=%22${encodedBusinessName}%22${domain ? `+-site:${encodedDomain}` : ''}`,
       tips: "Brand mentions excluding their own site - Monitor online reputation and brand awareness"
     });
     
     links.push({
       title: "Competitors Analysis",
-      url: `https://www.google.com/search?q="${encodedBusinessName}"+competitors+OR+alternatives`,
+      url: `https://www.google.com/search?q=%22${encodedBusinessName}%22+competitors+OR+alternatives`,
       tips: "Find competitors and alternatives - Research competitive landscape and market positioning"
     });
     
     links.push({
       title: "News Mentions",
-      url: `https://www.google.com/search?q="${encodedBusinessName}"${domain ? `+OR+"${encodedDomain}"` : ''}&tbm=nws`,
+      url: `https://www.google.com/search?q=%22${encodedBusinessName}%22${domain ? `+OR+"${encodedDomain}"` : ''}&tbm=nws`,
       tips: "News articles mentioning the business - Track media coverage and press mentions"
     });
     
     links.push({
       title: "Social Media Presence",
-      url: `https://www.google.com/search?q="${encodedBusinessName}"+site:facebook.com+OR+site:twitter.com+OR+site:linkedin.com+OR+site:instagram.com`,
+      url: `https://www.google.com/search?q=%22${encodedBusinessName}%22+site:facebook.com+OR+site:twitter.com+OR+site:linkedin.com+OR+site:instagram.com`,
       tips: "Social media profiles for this business - Verify social presence and engagement levels"
     });
     
     links.push({
       title: "Directory Listings",
-      url: `https://www.google.com/search?q="${encodedBusinessName}"+site:yelp.com+OR+site:yellowpages.com+OR+site:bbb.org`,
+      url: `https://www.google.com/search?q=%22${encodedBusinessName}%22+site:yelp.com+OR+site:yellowpages.com+OR+site:bbb.org`,
       tips: "Business directory listings - Check NAP consistency across major directories"
     });
   }
