@@ -1,0 +1,603 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="text-center mb-4">
+            <h1 class="display-4 fw-bold text-gradient mb-3">
+                <i class="fas fa-graduation-cap text-primary me-3"></i>
+                How to Use Maps Intelligence Tool
+            </h1>
+            <p class="lead text-muted">
+                Your complete guide to extracting business intelligence and saving hours of manual research
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- What This Tool Does -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow-lg">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-lightbulb text-warning me-3"></i>
+                    What This Tool Does (In Simple Terms)
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <p class="fs-5 mb-4">
+                            Think of this tool as your <strong>business detective</strong>. You give it a Google Maps link for any business, 
+                            and it automatically gathers all the important information about that business that would normally take you 
+                            hours to find manually.
+                        </p>
+                        
+                        <h4 class="text-primary mb-3">
+                            <i class="fas fa-clock me-2"></i>Time Savings
+                        </h4>
+                        <p class="mb-4">
+                            Instead of spending <strong>2-3 hours</strong> manually checking dozens of websites and directories for one business, 
+                            this tool does it all in <strong>30 seconds</strong>. That's a 99% time reduction!
+                        </p>
+                        
+                        <h4 class="text-success mb-3">
+                            <i class="fas fa-dollar-sign me-2"></i>Value for Your Clients
+                        </h4>
+                        <p class="mb-0">
+                            Your clients get comprehensive business intelligence reports that help them understand their 
+                            online presence, find optimization opportunities, and stay ahead of competitors - all delivered 
+                            faster and more accurately than manual research.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-secondary p-4 rounded">
+                            <h5 class="text-warning mb-3">
+                                <i class="fas fa-chart-line me-2"></i>Quick Stats
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    <strong>99% time reduction</strong> vs manual research
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    <strong>50+ data points</strong> collected automatically
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    <strong>100+ verification links</strong> generated
+                                </li>
+                                <li class="mb-0">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    <strong>Instant insights</strong> ready for client reports
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-cogs text-info me-3"></i>
+                    How It Works (Step by Step)
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">1</span>
+                            </div>
+                            <div>
+                                <h5 class="text-primary">Find a Business on Google Maps</h5>
+                                <p class="text-muted mb-0">
+                                    Search for any business on Google Maps (like "Joe's Pizza Dallas"). 
+                                    Click on the business listing to open its details page.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">2</span>
+                            </div>
+                            <div>
+                                <h5 class="text-success">Copy the URL</h5>
+                                <p class="text-muted mb-0">
+                                    Copy the web address from your browser's address bar. It should look like: 
+                                    <code class="text-info">https://www.google.com/maps/place/...</code>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">3</span>
+                            </div>
+                            <div>
+                                <h5 class="text-warning">Paste and Extract</h5>
+                                <p class="text-muted mb-0">
+                                    Paste the URL into our tool and click "Extract Data". We'll automatically 
+                                    pull out the business name, location coordinates, and unique identifiers.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-info rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">4</span>
+                            </div>
+                            <div>
+                                <h5 class="text-info">Choose Your Intelligence Level</h5>
+                                <p class="text-muted mb-0">
+                                    Select which APIs to use: <strong>Place Details</strong> (address, phone, website) 
+                                    and/or <strong>Knowledge Graph</strong> (entity recognition, authority data).
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-danger rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">5</span>
+                            </div>
+                            <div>
+                                <h5 class="text-danger">Get Instant Intelligence</h5>
+                                <p class="text-muted mb-0">
+                                    Click "Enrich Data" and watch as we gather comprehensive business information 
+                                    and generate 100+ verification and audit links in seconds.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 40px; height: 40px; flex-shrink: 0;">
+                                <span class="text-white fw-bold">6</span>
+                            </div>
+                            <div>
+                                <h5 class="text-light">Use the Results</h5>
+                                <p class="text-muted mb-0">
+                                    Review the JSON data and click through the Knowledge Links tab to audit 
+                                    the business's online presence, SEO, and competitive position.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- What You Get -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-gift text-success me-3"></i>
+                    What You Get From Each Business
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <h4 class="text-primary mb-3">
+                            <i class="fas fa-database me-2"></i>Basic Data
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business Name</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Exact GPS Coordinates</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Google Customer ID (CID)</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Google Place ID</li>
+                            <li class="mb-0"><i class="fas fa-check text-success me-2"></i>Knowledge Graph Entity ID</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <h4 class="text-warning mb-3">
+                            <i class="fas fa-info-circle me-2"></i>Enriched Details
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Full Address</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Phone Numbers</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Website URL</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business Hours</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ratings & Reviews Count</li>
+                            <li class="mb-0"><i class="fas fa-check text-success me-2"></i>Business Categories</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <h4 class="text-info mb-3">
+                            <i class="fas fa-link me-2"></i>Audit Links
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Direct Google Maps Links</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Review Management URLs</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>SEO Analysis Tools</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Competitor Research</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Website Security Checks</li>
+                            <li class="mb-0"><i class="fas fa-check text-success me-2"></i>Directory Listings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Client Benefits -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-users text-warning me-3"></i>
+                    Benefits for Your Clients
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="bg-secondary p-4 rounded mb-4">
+                            <h4 class="text-primary mb-3">
+                                <i class="fas fa-search me-2"></i>Local SEO Audits
+                            </h4>
+                            <p class="mb-3">
+                                Instead of manually checking 20+ websites and directories, generate a comprehensive 
+                                local SEO audit report in minutes. Identify NAP inconsistencies, missing listings, 
+                                and optimization opportunities instantly.
+                            </p>
+                            <p class="text-success mb-0">
+                                <strong>Client Value:</strong> Save $2,000-5,000 in audit costs per business
+                            </p>
+                        </div>
+                        
+                        <div class="bg-secondary p-4 rounded mb-4">
+                            <h4 class="text-warning mb-3">
+                                <i class="fas fa-shield-alt me-2"></i>Reputation Management
+                            </h4>
+                            <p class="mb-3">
+                                Get direct links to all review platforms, Q&A sections, and reputation monitoring 
+                                tools. Set up automated reputation tracking and response workflows.
+                            </p>
+                            <p class="text-success mb-0">
+                                <strong>Client Value:</strong> 10x faster reputation monitoring setup
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="bg-secondary p-4 rounded mb-4">
+                            <h4 class="text-info mb-3">
+                                <i class="fas fa-chart-bar me-2"></i>Competitive Analysis
+                            </h4>
+                            <p class="mb-3">
+                                Automatically generate competitor research links, technology stack analysis, 
+                                and market positioning data. Compare multiple businesses side-by-side effortlessly.
+                            </p>
+                            <p class="text-success mb-0">
+                                <strong>Client Value:</strong> Comprehensive competitor intel in 5 minutes vs 5 hours
+                            </p>
+                        </div>
+                        
+                        <div class="bg-secondary p-4 rounded">
+                            <h4 class="text-danger mb-3">
+                                <i class="fas fa-tools me-2"></i>Technical SEO Insights
+                            </h4>
+                            <p class="mb-3">
+                                Access website speed tests, mobile usability checks, security audits, and structured 
+                                data validation tools - all pre-configured with the business's exact website.
+                            </p>
+                            <p class="text-success mb-0">
+                                <strong>Client Value:</strong> Technical audit prep time reduced by 95%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- API Setup -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-key text-info me-3"></i>
+                    Setting Up Google Cloud APIs
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="alert alert-info" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Good News:</strong> Google provides <strong>$200 in free credits</strong> monthly for new accounts. 
+                    That's enough for approximately <strong>40,000-50,000 business lookups</strong> per month!
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <h4 class="text-primary mb-3">Quick Setup Guide</h4>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-warning">
+                                <span class="badge bg-primary me-2">1</span>
+                                Create Google Cloud Account
+                            </h5>
+                            <p class="mb-2">
+                                Go to <a href="https://console.cloud.google.com/" target="_blank" class="text-info">console.cloud.google.com</a> 
+                                and create a new project called "maps-intelligence"
+                            </p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-warning">
+                                <span class="badge bg-success me-2">2</span>
+                                Enable Required APIs
+                            </h5>
+                            <p class="mb-2">In the API Library, search for and enable:</p>
+                            <ul class="mb-2">
+                                <li><strong>Places API</strong> - For business details (address, phone, website)</li>
+                                <li><strong>Knowledge Graph Search API</strong> - For entity recognition and authority data</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-warning">
+                                <span class="badge bg-warning me-2">3</span>
+                                Create API Key
+                            </h5>
+                            <p class="mb-2">
+                                Go to Credentials → Create Credentials → API Key. 
+                                Copy the key and add it to your <code>.env</code> file as:
+                            </p>
+                            <code class="d-block bg-dark p-2 rounded">GOOGLE_MAPS_API_KEY=your_api_key_here</code>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5 class="text-warning">
+                                <span class="badge bg-info me-2">4</span>
+                                Set Up OAuth (Optional)
+                            </h5>
+                            <p class="mb-0">
+                                For additional security, you can restrict API access to specific Google accounts. 
+                                See the OAuth setup documentation in the project files for details.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="bg-secondary p-4 rounded">
+                            <h5 class="text-success mb-3">
+                                <i class="fas fa-calculator me-2"></i>Cost Calculator
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <strong>Place Details API:</strong><br>
+                                    <span class="text-muted">$5 per 1,000 calls</span>
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Knowledge Graph API:</strong><br>
+                                    <span class="text-muted">$7 per 1,000 calls</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Monthly Free Tier:</strong><br>
+                                    <span class="text-success">$200 credit = ~17,000 enriched lookups</span>
+                                </li>
+                                <li class="mb-0">
+                                    <strong>Per Business Cost:</strong><br>
+                                    <span class="text-warning">~$0.012 for full intelligence</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pro Tips -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-lightbulb text-warning me-3"></i>
+                    Pro Tips for Maximum Efficiency
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <h4 class="text-primary mb-3">
+                            <i class="fas fa-rocket me-2"></i>Workflow Optimization
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Batch Processing:</strong> Open multiple browser tabs with different business 
+                                listings, then process them one by one for maximum speed.
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Use Search Terms:</strong> Start with the search feature to find businesses 
+                                systematically (e.g., "plumbers in dallas", "restaurants in austin").
+                            </li>
+                            <li class="mb-0">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Save the JSON:</strong> Copy the JSON data from each lookup to build 
+                                comprehensive client reports and databases.
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h4 class="text-warning mb-3">
+                            <i class="fas fa-eye me-2"></i>What to Look For
+                        </h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                                <strong>Missing Data:</strong> If phone, website, or address show "Not available", 
+                                that's an immediate optimization opportunity for your client.
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-star text-warning me-2"></i>
+                                <strong>Review Count:</strong> Low review counts or ratings indicate reputation 
+                                management opportunities.
+                            </li>
+                            <li class="mb-0">
+                                <i class="fas fa-globe text-info me-2"></i>
+                                <strong>Knowledge Graph Status:</strong> If no KG entity is found, the business 
+                                has potential for authority building and entity optimization.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Troubleshooting -->
+<div class="row">
+    <div class="col-12">
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-header bg-transparent border-bottom border-secondary">
+                <h2 class="mb-0">
+                    <i class="fas fa-wrench text-danger me-3"></i>
+                    Common Issues & Solutions
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <div class="accordion" id="troubleshootingAccordion">
+                    <div class="accordion-item bg-secondary border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-secondary text-light border-0" 
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#issue1">
+                                <i class="fas fa-exclamation-circle text-warning me-2"></i>
+                                "API Key Error" or "Request Denied"
+                            </button>
+                        </h3>
+                        <div id="issue1" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-2"><strong>Cause:</strong> API key not configured or lacks permissions</p>
+                                <p class="mb-2"><strong>Solution:</strong></p>
+                                <ul class="mb-0">
+                                    <li>Check that your <code>GOOGLE_MAPS_API_KEY</code> is set in the .env file</li>
+                                    <li>Verify Places API and Knowledge Graph API are enabled in Google Cloud Console</li>
+                                    <li>Ensure billing is enabled on your Google Cloud project</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item bg-secondary border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-secondary text-light border-0" 
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#issue2">
+                                <i class="fas fa-map-marker-alt text-info me-2"></i>
+                                "No Results" or "Place ID Not Found"
+                            </button>
+                        </h3>
+                        <div id="issue2" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-2"><strong>Cause:</strong> Business location is very new or not well-established in Google Maps</p>
+                                <p class="mb-2"><strong>Solution:</strong></p>
+                                <ul class="mb-0">
+                                    <li>Try searching for the business by name instead of using coordinates</li>
+                                    <li>Check if the coordinates are accurate by pasting them into Google Maps</li>
+                                    <li>Some very new businesses may not have Place IDs yet - this is normal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item bg-secondary border-secondary">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed bg-secondary text-light border-0"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#issue3">
+                                <i class="fas fa-brain text-success me-2"></i>
+                                "Knowledge Graph Entity Not Found"
+                            </button>
+                        </h3>
+                        <div id="issue3" class="accordion-collapse collapse" data-bs-parent="#troubleshootingAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-2"><strong>This is actually valuable information!</strong></p>
+                                <p class="mb-3">When no Knowledge Graph entity is found, it means:</p>
+                                <ul class="mb-4">
+                                    <li>The business isn't recognized as a notable entity by Google yet</li>
+                                    <li>There's an opportunity to build entity authority and recognition</li>
+                                    <li>This is perfect intel for SEO strategy and authority building campaigns</li>
+                                    <li>Smaller local businesses often won't have KG entities - this is normal</li>
+                                </ul>
+                                
+                                <h5 class="text-warning mb-3">
+                                    <i class="fas fa-lightbulb me-2"></i>
+                                    Actionable Steps to Build Knowledge Graph Recognition
+                                </h5>
+                                
+                                <h6 class="text-danger mb-2">
+                                    <span class="badge bg-danger me-2">HIGH</span>
+                                    Immediate Actions (0-3 months)
+                                </h6>
+                                <ul class="mb-3">
+                                    <li><strong>Implement LocalBusiness schema</strong> on website</li>
+                                    <li><strong>Ensure NAP consistency</strong> across all platforms</li>
+                                    <li><strong>Complete GMB profile</strong> to 100% (photos, hours, services)</li>
+                                    <li><strong>Build review base</strong> to 50+ authentic reviews</li>
+                                    <li><strong>Create Wikipedia page</strong> if business meets notability guidelines</li>
+                                </ul>
+                                
+                                <h6 class="text-warning mb-2">
+                                    <span class="badge bg-warning me-2">MED</span>
+                                    Authority Building (3-12 months)
+                                </h6>
+                                <ul class="mb-3">
+                                    <li><strong>Secure media mentions</strong> in local/industry publications</li>
+                                    <li><strong>Build high-quality backlinks</strong> from authoritative sites</li>
+                                    <li><strong>Increase branded searches</strong> through PR and marketing</li>
+                                    <li><strong>Apply for industry awards</strong> and certifications</li>
+                                    <li><strong>Develop thought leadership</strong> content and speaking opportunities</li>
+                                </ul>
+                                
+                                <p class="mb-0 text-info">
+                                    <small>
+                                        <i class="fas fa-info-circle me-1"></i>
+                                        <strong>Pro Tip:</strong> Track progress by monitoring branded search volume, media mentions, 
+                                        and running this tool monthly to check for entity creation. Timeline: 12-24 months for most businesses.
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Login Hero Section -->
+<div class="row justify-content-center">
+    <div class="col-xl-6 col-lg-8 col-md-10">
+        <div class="text-center mb-5">
+            <!-- Large Logo -->
+            <div class="mb-4">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CiAgPCEtLSBPdXRlciByaW5nIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ4IiBmaWxsPSIjZTc0YzNjIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPgogIAogIDwhLS0gU2Vjb25kIHJpbmcgLSBXaGl0ZSAtLT4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSJub25lIi8+CiAgCiAgPCEtLSBUaGlyZCByaW5nIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjI4IiBmaWxsPSIjZTc0YzNjIiBzdHJva2U9Im5vbmUiLz4KICA8IS0tIEZvdXJ0aCByaW5nIC0gV2hpdGUgLS0+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iMTgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0ibm9uZSIvPgogIAogIDwhLS0gQ2VudGVyIGJ1bGxzZXllIC0gUmVkIC0tPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjgiIGZpbGw9IiNlNzRjM2MiIHN0cm9rZT0ibm9uZSIvPgogIAogIDwhLS0gQ2VudGVyIGRvdCAtIERhcmsgcmVkIGZvciBjb250cmFzdCAtLT4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzIiBmaWxsPSIjYzAzOTJiIiBzdHJva2U9Im5vbmUiLz4KPC9zdmc+" 
+                     style="width: 150px; height: 150px;" 
+                     alt="Maps Intelligence Logo">
+            </div>
+            
+            <h1 class="display-4 fw-bold text-gradient mb-3">
+                Maps Intelligence Tool
+            </h1>
+            <p class="lead text-muted">
+                Professional business intelligence extraction from Google Maps
+            </p>
+        </div>
+
+        <!-- Authentication Info Card -->
+        <div class="card bg-gradient-dark border-0 shadow-lg mb-4">
+            <div class="card-header bg-transparent border-bottom border-secondary text-center">
+                <h3 class="mb-0">
+                    <i class="fas fa-shield-alt text-primary me-2"></i>
+                    Secure Access Required
+                </h3>
+            </div>
+            <div class="card-body p-4">
+                <h4 class="text-warning mb-3">
+                    <i class="fas fa-users me-2"></i>
+                    How Authentication Works
+                </h4>
+                
+                <div class="row g-3 mb-4">
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 30px; height: 30px; flex-shrink: 0;">
+                                <span class="text-white fw-bold fs-6">1</span>
+                            </div>
+                            <div>
+                                <p class="mb-0">
+                                    <strong>Your Google account must be pre-authorized</strong> to access this tool, or you use use your own API keys.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-success rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 30px; height: 30px; flex-shrink: 0;">
+                                <span class="text-white fw-bold fs-6">2</span>
+                            </div>
+                            <div>
+                                <p class="mb-0">
+                                    We use <strong>Google OAuth</strong> to securely verify your identity and protect API access.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center me-3" 
+                                 style="width: 30px; height: 30px; flex-shrink: 0;">
+                                <span class="text-white fw-bold fs-6">3</span>
+                            </div>
+                            <div>
+                                <p class="mb-0">
+                                    You'll be redirected to Google to sign in, then brought back to start extracting business data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-warning mb-4" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Need Access?</strong> If your Google account hasn't been added to the test user list, 
+                    you'll see an access denied error. Contact us to request access.
+                </div>
+
+                <!-- Login Button -->
+                <div class="text-center mb-4">
+                    <a href="/login" class="btn btn-primary btn-lg px-5 py-3">
+                        <i class="fab fa-google me-3"></i>
+                        Sign In with Google Account
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <small class="text-muted">
+                        By signing in, you agree to use this tool responsibly and in compliance with Google's API terms.
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="card bg-gradient-dark border-0 shadow">
+            <div class="card-body p-4 text-center">
+                <h5 class="text-info mb-3">
+                    <i class="fas fa-envelope me-2"></i>
+                    Need Access or Support?
+                </h5>
+                <p class="text-muted mb-3">
+                    This tool is developed and maintained by Fraze Marketing. 
+                    Contact us for access requests, technical support, or business inquiries.
+                </p>
+                <a href="https://frazemarketing.com" target="_blank" class="btn btn-outline-info">
+                    <i class="fas fa-external-link-alt me-2"></i>
+                    Visit Fraze Marketing
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
