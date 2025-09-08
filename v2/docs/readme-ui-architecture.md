@@ -102,7 +102,7 @@ The app is designed to:
 ---
 
 ## 4. FILE AND FOLDER STRUCTURE
-
+```
 /maps-intel-tool/
 ├── .env                    # Maps API and Server Secret loaded from dotenv
 ├── app.py                  # Flask entry point
@@ -129,7 +129,7 @@ The app is designed to:
     ├── playwright_fallback.py # Scraping fallback
     ├── utils.py            # Logging, deduplication, etc.
     └── oauth_handler.py    # OAuth credentials + refresh
-
+```
 
 ---
 
@@ -233,6 +233,7 @@ Each record contains:
 - Google API client
 
 ---
+
 
 
 
