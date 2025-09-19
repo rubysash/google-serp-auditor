@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Generator</title>
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body class="p-4">
+  <div class="container">
+    <h2 class="text-gradient mb-4">Select Service to Generate Email</h2>
+
+    <label for="serviceDropdown" class="form-label">Service</label>
+    <select id="serviceDropdown" class="form-control mb-3" onchange="populateEmail()">
+      <option value="">-- Select a Service --</option>
+      <option value="freeWebsite">Free Website</option>
+      <option value="freeFollowUp">Free Follow-Up System</option>
+      <option value="deadLeadAI">Dead Lead AI Reactivation</option>
+      <option value="contentCreation">Content Creation</option>
+      <option value="gmbOptimization">GMB Optimization</option>
+      <option value="gmbCitations">GMB Citation Service</option>
+      <option value="seoPages">SEO Page Creation</option>
+      <option value="adManagement">Ad Management</option>
+      <option value="missedCall">Missed Call Text Back</option>
+      <option value="crmSetup">CRM Setup</option>
+      <option value="customProgramming">Custom Programming</option>
+      <option value="consulting">Marketing Consulting</option>
+    </select>
+
+    <label for="signatureInput" class="form-label">Your Signature</label>
+    <input id="signatureInput" class="form-control mb-3" placeholder="e.g. Sarah, Fraze Marketing">
+
+    <label for="emailOutput" class="form-label">Generated Email</label>
+    <textarea id="emailOutput" class="form-control" rows="16"></textarea>
+  </div>
+
+  <script>
+    const templates = {
+      freeWebsite: `Dear [Name],
+
+We are a local marketing agency based in Wylie TX. We are giving away 5 free websites in exchange for testimonials.
+There is no catch. You only pay for the domain name (around $15/year). Hosting is included.
+We handle the build-out for you. If you love the results, we’d love to show you how else we can grow your business.
+Would you like to claim one of these free sites?
+
+- {{signature}}`,
+
+      freeFollowUp: `Dear [Name],
+
+We’re giving away 5 complimentary lead follow-up systems this month to local businesses.
+We create the lead magnet, email capture form, and follow-up sequence—all customized to your audience.
+There’s a small fee for the sending platform, but setup and content are on us.
+Interested in increasing your follow-up automatically?
+
+- {{signature}}`,
+
+      deadLeadAI: `Dear [Name],
+
+Most small businesses have hundreds of old leads they’ve never followed up with.
+We use AI to revive those leads and bring them back as appointments or calls.
+You only pay when a lead responds. No monthly fees.
+Would you like us to show you what your list is worth?
+
+- {{signature}}`,
+
+      contentCreation: `Dear [Name],
+
+We offer done-for-you content that works across blogs, Google profiles, and social media.
+You’ll get 4 pieces monthly, tailored to your business.
+Want us to build authority and trust for your brand, automatically?
+
+- {{signature}}`,
+
+      gmbOptimization: `Dear [Name],
+
+Your Google Business Profile may be underperforming.
+We help you fix missing info, boost visibility, and appear in the map pack.
+Would you like a free optimization audit?
+
+- {{signature}}`,
+
+      gmbCitations: `Dear [Name],
+
+One of the biggest GMB ranking factors is citation consistency.
+We offer affordable citation campaigns that boost your trust with Google.
+Would you like us to run a citation check for free?
+
+- {{signature}}`,
+
+      seoPages: `Dear [Name],
+
+Ranking on Google starts with having the right pages.
+We research and write SEO-friendly pages that target your most valuable services.
+Want to know what your competitors rank for and how to beat them?
+
+- {{signature}}`,
+
+      adManagement: `Dear [Name],
+
+We offer ads that actually convert—but only after your SEO and web presence are dialed in.
+We handle copywriting, design, and optimization.
+Would you like a no-obligation plan to generate consistent leads?
+
+- {{signature}}`,
+
+      missedCall: `Dear [Name],
+
+Most businesses miss dozens of calls every month.
+We install a "Missed Call Text Back" system that captures every lost call as a text lead.
+Want us to set one up for free and show you how it works?
+
+- {{signature}}`,
+
+      crmSetup: `Dear [Name],
+
+Our team specializes in CRM setup and automation using GoHighLevel.
+We’ll build out your pipeline, automations, follow-up, and more.
+Want to get a system that handles your marketing without extra staff?
+
+- {{signature}}`,
+
+      customProgramming: `Dear [Name],
+
+Have a task that takes hours but could be automated?
+We build custom scripts and tools to eliminate repetitive work and increase consistency.
+Want to see if your idea can be automated?
+
+- {{signature}}`,
+
+      consulting: `Dear [Name],
+
+Sometimes the right 30-minute conversation can change your whole direction.
+We offer free strategy calls to review your web presence and marketing options.
+Want to claim one and get some clarity?
+
+- {{signature}}`
+    };
+
+    function populateEmail() {
+      const service = document.getElementById('serviceDropdown').value;
+      const signature = document.getElementById('signatureInput').value.trim() || '[Your Name]';
+      const output = document.getElementById('emailOutput');
+
+      if (!service) {
+        output.value = '';
+        return;
+      }
+
+      output.value = templates[service].replace('{{signature}}', signature);
+    }
+  </script>
+</body>
+</html>
