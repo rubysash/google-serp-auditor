@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Email Generator</title>
-  <link rel="stylesheet" href="static/css/styles.css">
-</head>
-<body class="p-4">
-  <div class="container">
-    <h2 class="text-gradient mb-4">Select Service to Generate Email</h2>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 2rem;
+    }
 
-    <label for="serviceDropdown" class="form-label">Service</label>
-    <select id="serviceDropdown" class="form-control mb-3" onchange="populateEmail()">
-      <option value="">-- Select a Service --</option>
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      color: #4fc3f7;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    select, input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      background-color: #2b2b2b;
+      color: #ffffff;
+    }
+
+    textarea {
+      min-height: 240px;
+      resize: vertical;
+      font-family: Consolas, monospace;
+    }
+
+    button {
+      background-color: #00c853;
+      color: #fff;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #009624;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: flex-start;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Select Service to Generate Email</h2>
+
+    <label for="serviceSelect">Choose Service</label>
+    <select id="serviceSelect">
       <option value="freeWebsite">Free Website</option>
-      <option value="freeFollowUp">Free Follow-Up System</option>
-      <option value="deadLeadAI">Dead Lead AI Reactivation</option>
+      <option value="freeFollowup">Free Follow Up System</option>
+      <option value="reactivation">Commission Based Reactivation</option>
       <option value="contentCreation">Content Creation</option>
       <option value="gmbOptimization">GMB Optimization</option>
-      <option value="gmbCitations">GMB Citation Service</option>
-      <option value="seoPages">SEO Page Creation</option>
+      <option value="citations">Citation Service</option>
+      <option value="seoPage">SEO Page Creation</option>
       <option value="adManagement">Ad Management</option>
       <option value="missedCall">Missed Call Text Back</option>
       <option value="crmSetup">CRM Setup</option>
@@ -26,127 +93,148 @@
       <option value="consulting">Marketing Consulting</option>
     </select>
 
-    <label for="signatureInput" class="form-label">Your Signature</label>
-    <input id="signatureInput" class="form-control mb-3" placeholder="e.g. Sarah, Fraze Marketing">
+    <label for="signatureInput">Your Signature</label>
+    <textarea id="signatureInput" class="form-control mt-3" rows="4" placeholder="Your signature here..."></textarea>
 
-    <label for="emailOutput" class="form-label">Generated Email</label>
-    <textarea id="emailOutput" class="form-control" rows="16"></textarea>
+    <label for="emailOutput">Generated Email</label>
+    <textarea id="emailOutput" readonly></textarea>
+
+    <div class="btn-row">
+      <button onclick="copyEmail()">Copy to Clipboard</button>
+    </div>
   </div>
 
   <script>
-    const templates = {
-      freeWebsite: `Dear [Name],
+    const emailTemplates = {
+freeWebsite: `Dear [Name],
 
-We are a local marketing agency based in Wylie TX. We are giving away 5 free websites in exchange for testimonials.
+We are a local marketing agency based in Wylie TX.
+
+We are giving away 5 free websites in exchange for testimonials.
+
 There is no catch. You only pay for the domain name (around $15/year). Hosting is included.
-We handle the build-out for you. If you love the results, we’d love to show you how else we can grow your business.
-Would you like to claim one of these free sites?
 
-- {{signature}}`,
+We handle the build-out for you. If you love the results, we’ll show you other ways we help businesses grow.
 
-      freeFollowUp: `Dear [Name],
+Would you like to claim your free website?`,
 
-We’re giving away 5 complimentary lead follow-up systems this month to local businesses.
-We create the lead magnet, email capture form, and follow-up sequence—all customized to your audience.
-There’s a small fee for the sending platform, but setup and content are on us.
-Interested in increasing your follow-up automatically?
+freeFollowup: `Dear [Name],
 
-- {{signature}}`,
+We’re offering 5 businesses a free lead magnet and follow-up system to help turn leads into customers.
 
-      deadLeadAI: `Dear [Name],
+You’ll get a capture form, lead magnet, and a fully-written SMS/email sequence — ready to go.
 
-Most small businesses have hundreds of old leads they’ve never followed up with.
-We use AI to revive those leads and bring them back as appointments or calls.
-You only pay when a lead responds. No monthly fees.
-Would you like us to show you what your list is worth?
+You just approve the messages. If you like what we build, we can scale it up.
 
-- {{signature}}`,
+Would you like us to set yours up?`,
 
-      contentCreation: `Dear [Name],
+reactivation: `Dear [Name],
 
-We offer done-for-you content that works across blogs, Google profiles, and social media.
-You’ll get 4 pieces monthly, tailored to your business.
-Want us to build authority and trust for your brand, automatically?
+We specialize in bringing back old leads using our AI-powered SMS/email reactivation campaigns.
 
-- {{signature}}`,
+You don’t pay unless it works — we earn commission only when you get results.
 
-      gmbOptimization: `Dear [Name],
+It’s 100% done-for-you. You just approve the message and get the calls.
 
-Your Google Business Profile may be underperforming.
-We help you fix missing info, boost visibility, and appear in the map pack.
-Would you like a free optimization audit?
+Want us to review your dead leads and run a test campaign?`,
 
-- {{signature}}`,
+contentCreation: `Dear [Name],
 
-      gmbCitations: `Dear [Name],
+If you’re too busy to write posts or blogs, we can create content for you each month — optimized for SEO, social, and Google My Business.
 
-One of the biggest GMB ranking factors is citation consistency.
-We offer affordable citation campaigns that boost your trust with Google.
-Would you like us to run a citation check for free?
+You get 4 pieces of content monthly that help build your brand and improve local rankings.
 
-- {{signature}}`,
+Want us to show you examples?`,
 
-      seoPages: `Dear [Name],
+gmbOptimization: `Dear [Name],
 
-Ranking on Google starts with having the right pages.
-We research and write SEO-friendly pages that target your most valuable services.
-Want to know what your competitors rank for and how to beat them?
+Your Google Business Profile is one of your most powerful tools — if it's optimized.
 
-- {{signature}}`,
+We fix common issues, verify your profile, and help you rank better with 25 citations per month.
 
-      adManagement: `Dear [Name],
+We’re based in Wylie and specialize in local businesses.
 
-We offer ads that actually convert—but only after your SEO and web presence are dialed in.
-We handle copywriting, design, and optimization.
-Would you like a no-obligation plan to generate consistent leads?
+Can we run a free scan of your listing?`,
 
-- {{signature}}`,
+citations: `Dear [Name],
 
-      missedCall: `Dear [Name],
+We offer citation building services that help improve your local SEO ranking.
 
-Most businesses miss dozens of calls every month.
-We install a "Missed Call Text Back" system that captures every lost call as a text lead.
-Want us to set one up for free and show you how it works?
+Each month we submit your business to 25+ directories to boost your online presence.
 
-- {{signature}}`,
+Would you like a sample report of how you're currently listed?`,
 
-      crmSetup: `Dear [Name],
+seoPage: `Dear [Name],
 
-Our team specializes in CRM setup and automation using GoHighLevel.
-We’ll build out your pipeline, automations, follow-up, and more.
-Want to get a system that handles your marketing without extra staff?
+We write and optimize SEO landing pages that rank for high-intent search terms (like “emergency [your service] near me”).
 
-- {{signature}}`,
+We handle the research, writing, and technical setup — all you do is review and approve.
 
-      customProgramming: `Dear [Name],
+Want us to find your top missed keywords?`,
 
-Have a task that takes hours but could be automated?
-We build custom scripts and tools to eliminate repetitive work and increase consistency.
-Want to see if your idea can be automated?
+adManagement: `Dear [Name],
 
-- {{signature}}`,
+We manage Google Ads for local businesses and help turn ad spend into real calls.
 
-      consulting: `Dear [Name],
+We only offer this service after fixing your SEO and landing pages — so you don’t waste money.
 
-Sometimes the right 30-minute conversation can change your whole direction.
-We offer free strategy calls to review your web presence and marketing options.
-Want to claim one and get some clarity?
+Would you like us to review your current campaign or setup?`,
 
-- {{signature}}`
+missedCall: `Dear [Name],
+
+Are you missing leads when you miss calls?
+
+We can set up a "Missed Call Text Back" system that replies instantly when a customer can’t reach you.
+
+This turns missed calls into new appointments automatically.
+
+Want us to show you how it works?`,
+
+crmSetup: `Dear [Name],
+
+We help local businesses set up powerful CRM systems using GoHighLevel — no tech skills required.
+
+We handle the automations, appointment reminders, follow-ups, and client management.
+
+Want a free walkthrough of how it works for your business?`,
+
+customProgramming: `Dear [Name],
+
+Have a repetitive task or a workflow that eats your time?
+
+We write custom scripts and automations that turn hours into seconds — consistent, repeatable, and trackable.
+
+Want to see if we can solve a time-wasting task for you?`,
+
+consulting: `Dear [Name],
+
+We offer 30-minute consulting calls for free to local businesses.
+
+We’ll walk you through what’s broken in your current marketing and show you exactly how to fix it — even if you never hire us.
+
+Want to grab a quick call?`
     };
+// set default 
+signatureInput.value = "Your Name\r\nMarketing Outreach Specialist\r\nServing Greater Dallas Area\r\n469-715-XXXX";
 
-    function populateEmail() {
-      const service = document.getElementById('serviceDropdown').value;
-      const signature = document.getElementById('signatureInput').value.trim() || '[Your Name]';
-      const output = document.getElementById('emailOutput');
-
-      if (!service) {
-        output.value = '';
-        return;
-      }
-
-      output.value = templates[service].replace('{{signature}}', signature);
+    function updateEmail() {
+      const service = document.getElementById("serviceSelect").value;
+      const signature = document.getElementById("signatureInput").value.trim();
+      const email = emailTemplates[service] + (signature ? `\n\n- ${signature}` : "");
+      document.getElementById("emailOutput").value = email;
     }
+
+    function copyEmail() {
+      const textarea = document.getElementById("emailOutput");
+      textarea.select();
+      textarea.setSelectionRange(0, 99999); // Mobile support
+      document.execCommand("copy");
+    }
+
+    document.getElementById("serviceSelect").addEventListener("change", updateEmail);
+    document.getElementById("signatureInput").addEventListener("input", updateEmail);
+
+    window.addEventListener("DOMContentLoaded", updateEmail);
   </script>
 </body>
 </html>
